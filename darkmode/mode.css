@@ -1,0 +1,77 @@
+body{
+
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  transition: 0.4s;
+}
+
+
+
+
+.input{
+  visibility: hidden;
+
+}
+
+.label{
+  position: absolute;
+  width: 160px;
+  height: 80px;
+  background-color: lightgray;
+  border-radius: 40px;
+  cursor: pointer;
+
+}
+
+
+.circle{
+
+  width: 74px;/*since label if of height 40 px  and 3 px up and down for the border effect*/
+  background-color: rgb(255, 255, 255);
+  height: 74px;
+  border-radius: 50%;
+  top: 3px;
+  position: absolute;
+  left: 3px;
+  animation: toggleOff 0.1s linear forwards;
+
+}
+
+.input:checked + .label{
+
+  background-color: white;
+
+}
+
+.input:checked + .label .circle{
+
+ animation: toggleOn 0.1s linear forwards;
+ background-color: black;
+}
+
+@keyframes toggleOn {
+  
+  0%{
+    transform: translateX(0);
+  } 
+  100%{
+
+    transform: translateX(80px);
+  }
+
+}
+
+@keyframes toggleOff {
+  
+  0%{
+    transform: translateX(80px);
+  } 
+  100%{
+
+    transform: translateX(0);
+  }
+
+}
