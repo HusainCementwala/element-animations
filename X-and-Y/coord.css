@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: deepskyblue;
+}
+
+
+.container{
+
+  display: flex;
+  gap: 60px;
+  text-align: center;
+  
+}
+
+
+label{
+
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  color: white;
+
+}
