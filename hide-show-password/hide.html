@@ -9,19 +9,76 @@
 <body>
   
 <div class="input-box">
-  <input type="password" placeholder="Type your pass..." id="password">
+  <input type="password" placeholder="Type your pass..." id="password" >
   <img src="eye-close.png" id="eye-icon">
-
+  
 </div>
-
+<p id="message">Password is <span id="strength"></span></p>
 </body>
 
 
 <script>
 
-
+var input = document.querySelector(".input-box"); //created to change the border dynamically on account of password strength
 let eyeIcon = document.getElementById("eye-icon");
-let password = document.getElementById("password");
+var password = document.getElementById("password");
+var msg = document.getElementById("message");
+var str = document.getElementById("strength");
+
+
+
+//this event listner is to check the strenght of the pasword
+password.addEventListener("input", ()=>{
+
+
+  //this if and else is for the message appearence of just "Password is"-- the rest is ahead
+  if(password.value.length > 0){
+    msg.style.display = "block";
+  }
+  else{
+    msg.style.display = "none";
+  }
+
+//to check that the password limit remains below or at 14
+  if (password.value.length > 14) {
+    str.innerHTML = "Too long";
+    input.style.borderColor = "red";
+    msg.style.color = "red";
+    return; // Stop further execution if length exceeds 14
+  }
+
+
+//this if and 2 else if's are for the later sentnce part and dynamically change border of the whole input box
+  if(password.value.length < 4){
+
+    str.innerHTML = "weak"; 
+    input.style.borderColor = "#da1e28";
+    msg.style.color = "#da1e28";
+  }
+
+
+  else if(password.value.length >= 4 && password.value.length < 8){
+
+    str.innerHTML = "medium";
+
+    input.style.borderColor = "#f1c21b";
+    msg.style.color = "#f1c21b";
+  }
+
+
+  else if(password.value.length >= 8 && password.value.length <= 14 ){
+
+  
+    str.innerHTML = "strong";
+
+    input.style.borderColor = "#24a148";
+    msg.style.color = "#24a148";
+  }
+
+  
+
+});
+
 
 eyeIcon.onclick = function(){
 

@@ -8,7 +8,7 @@
 
 body{
 
-  background-color: rgb(107, 56, 224);
+  background-color: rgb(0, 0, 0);
 }
 
 .input-box{
@@ -22,6 +22,10 @@ body{
   display: flex;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  border-width: 3px;
+  border-style: solid;
+ border-color: transparent;
+  
 
 
 }
@@ -42,3 +46,15 @@ body{
   width: 35px;
   cursor: pointer;
 }
+
+#message{
+
+  position: absolute;
+  left: 35%;
+  top: 53%;
+  color: white;
+  font-size: 25px;
+  font-family: sans-serif;
+  display: none;
+} 
+
